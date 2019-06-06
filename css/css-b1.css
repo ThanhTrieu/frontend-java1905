@@ -1,0 +1,93 @@
+/* cu phap comment trong css */
+
+/*
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+} 
+*/
+
+/* id selector */
+/* #myTitle{
+	color: green;
+	font-size: 50px;
+	font-weight: bolder;
+} */
+
+/* class selector */
+h1.title{
+	color: yellow;
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+/* html selector*/
+h1 {
+	color: red;
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+input[name='user'] {
+	border: 2px solid red;
+}
+
+input[type='tex'] {
+	border: 2px solid blue;
+}
+input[type~='text'] {
+	border: 2px solid orange;
+}
+input[~=class'abc']{
+	border: 2px solid violet;
+}
+input[class*='f']{
+	border: 2px solid gray;
+}
+input[name^='u']{
+	border: 2px solid pink;
+}
+input[class$='g']{
+	border: 2px solid brown;
+}
+input[class|='my']{
+	border: 2px solid yellow;
+}
+/* seclector ket hop*/
+/* the lien ke */
+div.content + div.content-2 {
+	width: 300px;
+	height: 300px;
+	background-color: yellow;
+}
+/* the tren duoi */
+div.content ~ div.content-3 {
+	width: 300px;
+	height: 300px;
+	background-color: green;
+}
+div.content div.child > h4 {
+	color: red;
+	font-size: 50px;
+}
+
+div.box-1 ~ div.box-2 > div.box-3 + div.box-4 ~ div.box-5 h5.abc {
+	color: red;
+}
+
+div.box-3{
+	width: 200px;
+	height: 200px;
+	background-color: pink;
+}
+div.box-4{
+	width: 200px;
+	height: 200px;
+	background-color: violet;
+}
+
+
+
+
+
