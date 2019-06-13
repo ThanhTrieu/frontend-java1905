@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div.box, div.content {
+	width: 300px;
+	height: 300px;
+	/* border: solid 1px red; */
+	/* border-top: solid 1px red;
+	border-right: solid 1px red; */
+	/* border: dotted 1px blue; */
+	/* border: dashed 1px blue; */
+	/* border: groove 1px blue; */
+	border: solid 1px blue;
+}
+div.box, div.content{
+	/* margin-top: 50px;
+	margin-left: 50px;
+	margin-bottom: 50px;
+	margin-right: 50px; */
+	margin: 50px 10px 0px 0px;
+	display: inline-block;
+}
+div.box h3, div.content h3 {
+	padding: 50px 0px 0px 50px;
+	/* margin: 50px 0px 0px 50px; */
+	background-color: yellow;
+}
+div.box2{
+	margin-left: 50px;
+}
+div.box2 a{
+	/* display: block; */
+	display: list-item;
+}
+
+div.content{
+	/* display: none; */
+	visibility: hidden;
+}
+main{
+	width: 900px;
+	min-height: 300px;
+	border: 1px solid black;
+}
+section.sec-1{
+	background-color: yellow;
+}
+section.sec-2{
+	background-color: red;
+}
+section.sec-3{
+	background-color: blue;
+}
+section.sec-1, section.sec-2, section.sec-3{
+	width: 200px;
+	height: 300px;
+	/* float: right; */
+	float: left;
+}
+div.box3{
+	width: 200px;
+	height: 300px;
+	background-color: violet;
+}
+.myClear{
+	clear: both;
+}
+
+div.position{
+	width: 500px;
+	height: 500px;
+	border: 1px solid red;
+	position: relative;
+	z-index: 9999;
+	background-color: yellow;
+}
+img {
+	/* position: relative; */
+	/*
+	bottom: 500px;
+	left: 100px; */
+	position: absolute;
+	/* bottom: 500px;
+	left: 10px */
+	top: 1200px;
+	z-index: 0;
+}
+nav.header{
+	width: 100%;
+	height: 40px;
+	background-color: blue;
+	position: fixed;
+	z-index: -9999;
+}
+
+
+

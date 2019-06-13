@@ -1,0 +1,63 @@
+/* reset trinh duyet*/
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	font-family: 'tahoma';
+	font-size: 14px;
+}
+
+nav{
+	width: 220px;
+	border: 1px solid #ccc;
+	background-color: #FFFFCC;
+	margin: 20px 0px 0px 20px;
+	display: none;
+}
+
+nav ul.menu li {
+ 	/* an dau cham tron cua the li mac dinh */
+ 	list-style: none;
+ 	border-bottom: 1px solid #ccc;
+ 	padding: 12px 0px 12px 10px;
+ 	position: relative;
+}
+
+nav ul.menu li a {
+	text-decoration: none;
+}
+nav ul.menu li:hover {
+	background-color: black;
+	cursor: pointer;
+}
+nav ul.menu > li:hover a {
+	color: white;
+}
+nav ul.menu li:last-child {
+	border: none;
+}
+
+/* menu drop down*/
+nav ul.menu li ul.drop-down {
+	display: none;
+}
+nav ul.menu li ul.drop-down li > a {
+	color: blue;
+}
+nav ul.menu li ul.drop-down li:hover > a {
+	color: white;
+}
+nav ul.menu li:hover > ul.drop-down{
+	display: block;
+	position: absolute;
+	left: 220px;
+	top: 0px;
+	background-color: #FFFFCC;
+	width: 220px;
+	border: 1px solid #ccc;
+}
+
+
