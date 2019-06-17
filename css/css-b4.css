@@ -1,0 +1,96 @@
+div.content{
+	width: 100px;
+	height: 150px;
+	border: 1px solid red;
+	/* overflow: scroll; */
+	/* overflow: hidden; */
+	/* overflow-y: scroll; */
+	/* overflow-x: scroll;
+	overflow-y: hidden; */
+	overflow: auto;
+
+}
+p.text{
+	width: 300px;
+}
+div.container {
+	width: 900px;
+	margin: auto;
+	border: 1px solid red;
+}
+div.container div.box-1 {
+	width: 50%;
+	background-color: yellow;
+	min-height: 300px;
+	float: left;
+}
+div.container div.box-2 {
+	width: 50%;
+	background-color: blue;
+	min-height: 300px;
+	float: left;
+}
+/* responsive*/
+/* chay tot nhat tren thiet bi iphone x cac thiet bi tuong thich */
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+	/* override lai css o ben ngoai */
+	div.container div.box-1 {
+		width: 100%;
+		float: none;
+		background-color: red;
+	}
+
+	div.container div.box-2 {
+		width: 100%;
+		float: none;
+		background-color: green;
+	}
+	div.container div.box-1 img {
+		display: none;
+	}
+}
+.clear{
+	clear: both;
+}
+div.gradient{
+	width: 300px;
+	height: 300px;
+	background-color: pink;
+	/* background: linear-gradient(to left, rgb(10,40,50),rgb(12,45,55), rgb(200, 100, 99)); */
+
+	background: -webkit-linear-gradient(45deg, blue, pink, violet, orange, gray);
+	background: -moz-linear-gradient(45deg, blue, pink, violet, orange, gray);
+	background: -ms-linear-gradient(45deg, blue, pink, violet, orange, gray);
+	background: -o-linear-gradient(45deg, blue, pink, violet, orange, gray);
+
+	background: linear-gradient(45deg, blue, pink, violet, orange, gray);
+
+	/* dung stranform*/
+	/* di chuyen phan tu */
+	-webkit-transform: translate(30px,40px);
+	-moz-transform: translate(30px,40px);
+	-ms-transform: translate(30px,40px);
+	-o-transform: translate(30px,40px);
+	transform: translate(30px,40px);
+
+	transform: rotate(60deg);
+
+	transform: scale(2, 3);
+
+	transform: skew(20deg, 40deg);
+
+}
+div.text-flow p{
+	width: 100px;
+	border: 1px solid red;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
