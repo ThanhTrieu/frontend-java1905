@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Demo Dom JS</title>
+	<style type="text/css">
+		.myTitle{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="title" class="myTitle">Learning JS Dom</h1>
+	<h1 id="title2" class="myTitle">Learning JS Dom 2</h1>
+	<h1 id="title3" class="myTitle">Learning JS Dom 3</h1>
+	<br>
+	<button id="btn" class="btn">Click me</button>
+	<br><br>
+	<input type="text" class="myText">
+	<br><br>
+	<button class="myBtn"> Click me 2</button>
+	<br>
+	<img src="image/icon.png" alt="">
+	<div class="box"></div>
+
+	<br><br>
+	<button class="myBtn-3"> Click me 3</button>
+	<br><br>
+	<a href="js-b1.html"></a>
+	<br><br>
+	<button id="forward"> Forward</button>
+	<br><br>
+	<input type="text" class="hsa">
+	<br><br>
+	<input type="text" class="hsb">
+	<br><br>
+	<button id="sum"> Tinh Tong</button>
+	<h3>KQ: <span id="result">  </span> </h3>
+
+	<script type="text/javascript">
+		document.getElementById('sum').onclick = function(){
+			let hsa = document.getElementsByClassName('hsa')[0];
+			let hsb = document.getElementsByClassName('hsb')[0];
+
+			let number1 = hsa.value;
+			number1 = Number.parseInt(number1);
+
+			let number2 = hsb.value;
+			number2 = Number.parseInt(number2);
+
+			let sum = number1 + number2;
+			document.getElementById('result').innerHTML = sum;
+
+		};
+
+		document.getElementById('forward').onclick = function(){
+			history.forward();
+		};
+		// tim the h1 thong qua id cua no
+		let title = document.getElementById('title');
+		console.log(title);
+
+		// tim the h1 thong qua class cua no
+		let myTitle = document.getElementsByClassName('myTitle');
+		console.log(myTitle[0]);
+
+		// tim the h1 thong qua ten the cua no
+		let nameTag = document.getElementsByTagName('h1');
+		console.log(nameTag[1]);
+
+		//tim the h1 thong qua selector css cua no
+		let selector = document.querySelectorAll('.myTitle');
+		console.log(selector[0]);
+
+
+		// muon gan 1 su kien thong qua DOM Event hay EventListener thi can truy cap dc vao phan tu do.
+		let button = document.getElementById('btn');
+		// gan cho no su kien
+		button.onclick = function(){
+			alert('Hello you');
+		}
+		let myBtn = document.getElementsByClassName('btn');
+
+		myBtn[0].onmousedown = function(){
+			console.log('ban vua bam vao toi bang cac bo phan tren con chuot');
+		}
+
+		let myInput = document.getElementsByClassName('myText');
+		// myInput[0].onkeydown = function(){
+		// 	let data = this.value;
+		// 	console.log(data, this);
+		// }
+		myInput[0].addEventListener('keydown',function(){
+			let data = this.value;
+			console.log(data);
+		});
+
+		document.getElementsByClassName('myBtn')[0].addEventListener('click', function(){
+			//alert('Hi');
+			//lay ra dc noi dung ma nguoi dung nhap vao o input
+			let dt = myInput[0].value;
+			console.log(dt);
+			title.innerHTML = 'Learning Java';
+			//myInput[0].setAttribute('type', 'button');
+			myInput[0].type = 'button';
+			document.getElementsByTagName('img')[0].src = 'https://sohanews.sohacdn.com/thumb_w/660/2016/3-1461725590-giaithuong-sontung-2-1461901917421-0-0-255-500-crop-1461902124630.jpg';
+
+			let box = document.getElementsByClassName('box')[0];
+			box.style.width = '300px';
+			box.style.height = '300px';
+			box.style.border = '1px solid red';
+			box.style.backgroundColor = 'yellow';
+		});
+
+		document.getElementsByClassName('myBtn-3')[0].onclick = function (){
+			// lay ra kich thuoc cua so trinh duyet nguoi dung dang lam viec
+			let wBrowser = window.innerWidth;
+			let hBrowser = window.innerHeight;
+			console.log(`width : ${wBrowser} - Height: ${hBrowser}`);
+
+			// bat ra 1 cua so moi
+			//window.open('https://www.vnexpress.net','vnexpress','width=300px,height=300px');
+			
+			// tai lai trang web
+			//window.location.reload(true);
+			// true: load lai du lieu trang tu server tra ve - khong phai load trang tu cache cua trinh duyet
+			
+			// di sang 1 url moi
+			//window.location.href = 'https://www.vnexpress.net';
+			
+			// kich thuoc man hinh may tinh
+			let wScreen = screen.width;
+			let hScreen = screen.height;
+			console.log(`Width Screen : ${wScreen} - Height Screen : ${hScreen}`);
+		}
+
+
+	</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 	<title>object - JS</title>
 
 </head>
-<body onerror="myError();" onload="myOnload();">
+<body onerror="myError();" onload="myOnload();" onresize="myResize();">
 	<h1> Object - JS</h1>
 	<button onclick="hello();"> Click me </button>
 	<br>
@@ -32,9 +32,24 @@
 	<br><br>
 	<img width="200" height="200" src="image/icon.png" onmouseover="imageZoom(this);" onmouseout="imageZoom2(this);">
 
+	<br><br>
+	<textarea rows="3" cols="100" onselect="mySelect();">
+		
+	</textarea>
+
 	<script src="js/js-object.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
+		window.onbeforeunload = function(){
+			return "exit";
+		}
+		
+		function mySelect(){
+			console.log('ban vua boi den chon van ban');
+		}
+		function myResize(){
+			console.log('Ban vua thay kich thuoc khung trinh duyet');
+		}
 		function imageZoom(obj){
 			obj.width = 500;
 			obj.height = 500;
