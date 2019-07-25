@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Phuong trinh bac nhat</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style type="text/css">
+		.errInput {
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<h1 id="time" class="text-center"> 0 </h1>
+				<button type="button" id="start" class="btn btn-primary">Start</button>
+				<button type="button" id="stop" class="btn btn-primary">Stop</button>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+				<form class="border p-3 mt-3">
+					<div class="form-group">
+						<label for="hsa">He So a </label>
+						<input type="text" class="form-control" name="hsa" id="hsa">
+						<p class="my-2 text-danger d-none errHsa">(*) Vui long nhap so</p>
+					</div>
+
+					<div class="form-group">
+						<label for="hsb">He So b </label>
+						<input type="text" class="form-control" name="hsb" id="hsb">
+						<p class="my-2 text-danger d-none errHsb">(*) Vui long nhap so</p>
+					</div>
+					<button type="button" class="btn btn-primary" id="giaiPT"> Giai PT</button>
+				</form>
+				<p class="my-3 result"></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Image</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Qty</th>
+							<th>Money</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>
+								<img width="120" height="120" src="https://cdn.tgdd.vn/Products/Images/42/201228/samsung-galaxy-a80-gold-400x400.jpg" alt="">
+							</td>
+							<td>
+								Điện thoại Samsung Galaxy S10+ 128GB
+							</td>
+							<td class="price">
+								2000
+							</td>
+							<td>
+								<input type="number" class="qty" value="2">
+							</td>
+							<td class="money">
+								40000
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>
+								<img width="120" height="120" src="https://cdn.tgdd.vn/Products/Images/42/201228/samsung-galaxy-a80-gold-400x400.jpg" alt="">
+							</td>
+							<td>
+								Điện thoại Samsung Galaxy S10+ 128GB
+							</td>
+							<td class="price">
+								2000
+							</td>
+							<td>
+								<input type="number" class="qty" value="2">
+							</td>
+							<td class="money">
+								40000
+							</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>
+								<img width="120" height="120" src="https://cdn.tgdd.vn/Products/Images/42/201228/samsung-galaxy-a80-gold-400x400.jpg" alt="">
+							</td>
+							<td>
+								Điện thoại Samsung Galaxy S10+ 128GB
+							</td>
+							<td class="price">
+								2000
+							</td>
+							<td>
+								<input type="number" class="qty" value="2">
+							</td>
+							<td class="money">
+								40000
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="5">Total money</td>
+							<td class="totalMoney">12000</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+		<div class="row my-5">
+			<input type="text" class="form-control" id="keyboard">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// bat su kien start time
+			let time = 0;
+			let startTime;
+			$('#start').click(function(){
+				// lap di lap lai 1 hanh dong nao do mai mai theo thoi gian
+				// co 2 tham so :
+				// tham so thu nhat la 1 hanh dong
+				// tham so thu 2 la thoi gian thuc thi hanh dong do lap lai
+				startTime = setInterval(function(){
+					time++;
+					$('#time').html(time);
+
+					if(time == 10){
+						clearInterval(startTime);
+					}
+					
+				},1000);
+			});
+
+			// bat su kien stop time
+			$('#stop').click(function(){
+				//xoa hanh dong dc tao ra boi setInterval
+				clearInterval(startTime);
+			});
+
+
+			// bat su kien click vao but GPT
+			$('#giaiPT').click(function(){
+				let hsa = $('#hsa').val().trim();
+				let hsb = $('#hsb').val().trim();
+
+				// kiem tra xem hsa va hsb co phai la so ko
+				let chkHsa = null;
+				let chkHsb = null;
+
+				// kiem tra cho he so a
+				if(jQuery.isNumeric(hsa)){
+					chkHsa = true;
+					$('.errHsa').addClass('d-none');
+					$('#hsa').removeClass('errInput');
+					//
+				} else {
+					chkHsa = false;
+					// hien thi thong bao loi
+					$('.errHsa').removeClass('d-none');
+					$('#hsa').addClass('errInput');
+				}
+
+				// kiem tra cho he so a
+				if(jQuery.isNumeric(hsb)){
+					chkHsb = true;
+					$('.errHsb').addClass('d-none');
+					$('#hsb').removeClass('errInput');
+					//
+				} else {
+					chkHsb = false;
+					// hien thi thong bao loi
+					$('.errHsb').removeClass('d-none');
+					$('#hsb').addClass('errInput');
+				}
+
+				// tinh ket qua
+				if(chkHsb && chkHsa){
+					// luc nay moi ep kieu ve kieu so de tinh toan
+					hsa = Number.parseFloat(hsa);
+					hsb = Number.parseFloat(hsb);
+					let kq = -hsb/hsa;
+					$('.result').html(`nghiem la : ${kq}`);
+				} else {
+					$('.result').empty();
+				}
+
+			});
+
+			// xu ly su kien nguoi dung thay doi so luong mua hang
+			$('.qty').change(function() {
+				let qty = $(this).val().trim();
+				qty = Number.parseInt(qty);
+				// this == .qty
+
+				// cap lai so tien
+				let price = $(this).parent().prev().text();
+				price = Number.parseInt(price);
+				let money = (qty > 0) ? qty*price : 0;
+				$(this).parent().next().text(money);
+
+				// cap nhat lai tong tien
+				let totalMoney = 0;
+				$('.money').each(function(key, el){
+					//console.log(key, el);
+					// duyet qua tat ca cac cot td co class la money
+					// sau do se lay tien va cong don lai
+					let m = $(el).text().trim();
+					m = Number.parseInt(m);
+					totalMoney += m;
+				});
+				$('.totalMoney').text(totalMoney);
+
+			});
+
+			// xu ly su kien keydown cho input
+			$('#keyboard').keydown(function(e) {
+				let key = e.which;
+				if(key === 13){
+					let data = $('#keyboard').val().trim();
+					alert(data);
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>
